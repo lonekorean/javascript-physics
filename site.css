@@ -1,0 +1,31 @@
+body {
+	max-width: 800px;
+	margin: 0 auto;
+    padding: 40px;
+    color: #495057;
+    background-color: #f8f9fa;
+	font: 1.25rem/1.5 'Roboto', sans-serif;
+}
+
+h1 {
+    margin: 0;
+    font-size: 3.5rem;
+    text-transform: uppercase;
+}
+
+a {
+	color: #1098ad;
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+li {
+	padding-bottom: 20px;
+}
+
+.notes {
+	border-top: 2px dashed #dee2e6;
+}
