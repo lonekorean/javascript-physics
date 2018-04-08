@@ -1,3 +1,12 @@
+function wall(x, y, width, height) {
+    return Matter.Bodies.rectangle(x, y, width, height, {
+        isStatic: true,
+        render: {
+            fillStyle: 'green'
+        }
+    });
+}
+
 function peg(x, y) {
     return Matter.Bodies.circle(x, y, 15, {
         isStatic: true,
@@ -10,7 +19,7 @@ function peg(x, y) {
 }
 
 function bead() {
-    return Matter.Bodies.circle(280, 20, 10, {
+    return Matter.Bodies.circle(280, 40, 10, {
         restitution: 0.5,
         render: {
             fillStyle: 'purple'
@@ -65,28 +74,30 @@ Matter.Render.run(render);
 let runner = Matter.Runner.create();
 Matter.Runner.run(runner, engine);
 
-// floor
-let floor = Matter.Bodies.rectangle(280, 790, 560, 20, {
-    isStatic: true,
-    render: {
-        fillStyle: 'blue'
-    }
-});
-Matter.World.add(engine.world, floor);
+// boundaries
+Matter.World.add(engine.world, [
+    wall(280, 0, 560, 40), // top
+    wall(280, 800, 560, 40), // bottom
+    wall(0, 400, 40, 800), // left
+    wall(560, 400, 40, 800), // right
+]);
 
 // pegs
-let isStaggerRow = true;
-for (let y = 200; y <= 440; y += 40) {
-    for (let x = 0; x <= 560; x += 80) {
-        let staggerOffset = isStaggerRow ? 40 : 0;
-        Matter.World.add(engine.world, peg(x + staggerOffset, y));
+let isStaggerRow = false;
+for (let y = 200; y <= 400; y += 40) {
+    let startX = isStaggerRow ? 80 : 40;
+    for (let x = startX; x <= 520; x+= 80) {
+        Matter.World.add(engine.world, peg(x, y));
     }
     isStaggerRow = !isStaggerRow;
 }
 
+
+
+
 // dividers
 for (let x = 0; x <= 560; x += 80) {
-    Matter.World.add(engine.world, divider(x));
+    Matter.World.add(engine.world, wall(x, 600, 20, 360));
 }
 
 setInterval(dropBead, 250);
