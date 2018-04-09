@@ -1,16 +1,8 @@
 body {
-	max-width: 800px;
-	margin: 0 auto;
-    padding: 40px;
+	margin: 20px;
     color: #495057;
     background-color: #f8f9fa;
-	font: 1.25rem/1.5 'Roboto', sans-serif;
-}
-
-h1 {
-    margin: 0;
-    font-size: 3.5rem;
-    text-transform: uppercase;
+	font: 1.25rem/1.25 'Roboto', sans-serif;
 }
 
 a {
@@ -22,8 +14,25 @@ a:hover {
 	text-decoration: underline;
 }
 
+h1 {
+    margin: 0;
+    font-size: 3.5rem;
+    text-transform: uppercase;
+}
+
+ul {
+	margin: 20px 40px;
+	padding: 0;
+}
+
 li {
-	padding-bottom: 20px;
+	margin: 0;
+	padding: 0 0 20px;
+}
+
+.landing {
+	max-width: 800px;
+	margin: 0 auto;	
 }
 
 .notes {

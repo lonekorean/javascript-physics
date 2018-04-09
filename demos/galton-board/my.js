@@ -12,7 +12,6 @@ function peg(x, y) {
         isStatic: true,
         restitution: 0.5,
         render: {
-            strokStyle: '#ff922b',
             fillStyle: '#ffc078'
         }
     });
