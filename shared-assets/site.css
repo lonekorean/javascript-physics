@@ -1,12 +1,20 @@
+*, *::before, *::after {
+	box-sizing: content-box;
+}
+
+html, body {
+	height: 100%;
+}
+
 body {
-	margin: 20px;
-    color: #495057;
-    background-color: #f8f9fa;
+	margin: 0;
+    color: #f8f9fa;
+    background-color: #212529;
 	font: 1.25rem/1.25 'Roboto', sans-serif;
 }
 
 a {
-	color: #1098ad;
+	color: #3bc9db;
 	text-decoration: none;
 }
 
@@ -32,9 +40,21 @@ li {
 
 .landing {
 	max-width: 800px;
-	margin: 0 auto;	
+	margin: 0 auto;
+	padding: 20px;
 }
 
 .notes {
-	border-top: 2px dashed #dee2e6;
+	border-top: 2px dashed #868e96;
+}
+
+#matter {
+	display: grid;
+	align-content: center;
+	justify-content: center;
+	height: 100%;
+}
+
+canvas {
+	border: 1px solid #868e96;
 }

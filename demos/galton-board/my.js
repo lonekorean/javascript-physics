@@ -2,7 +2,7 @@ function wall(x, y, width, height) {
     return Matter.Bodies.rectangle(x, y, width, height, {
         isStatic: true,
         render: {
-            fillStyle: 'green'
+            fillStyle: '#868e96'
         }
     });
 }
@@ -12,7 +12,7 @@ function peg(x, y) {
         isStatic: true,
         restitution: 0.5,
         render: {
-            fillStyle: '#ffc078'
+            fillStyle: '#82c91e'
         }
     });
 }
@@ -21,16 +21,7 @@ function bead() {
     return Matter.Bodies.circle(280, 40, 10, {
         restitution: 0.5,
         render: {
-            fillStyle: 'purple'
-        }
-    });
-}
-
-function divider(x) {
-    return Matter.Bodies.rectangle(x, 700, 20, 460, {
-        isStatic: true,
-        render: {
-            fillStyle: 'green'
+            fillStyle: '#e64980'
         }
     });
 }
@@ -64,7 +55,7 @@ let render = Matter.Render.create({
         width: 560,
         height: 800,
         wireframes: false,
-        background: '#868e96'
+        background: '#f8f9fa'
     }
 });
 Matter.Render.run(render);
@@ -75,10 +66,10 @@ Matter.Runner.run(runner, engine);
 
 // boundaries
 Matter.World.add(engine.world, [
-    wall(280, 0, 560, 40), // top
-    wall(280, 800, 560, 40), // bottom
-    wall(0, 400, 40, 800), // left
-    wall(560, 400, 40, 800), // right
+    wall(280, 0, 560, 20), // top
+    wall(280, 800, 560, 20), // bottom
+    wall(0, 400, 20, 800), // left
+    wall(560, 400, 20, 800), // right
 ]);
 
 // pegs
@@ -91,12 +82,9 @@ for (let y = 200; y <= 400; y += 40) {
     isStaggerRow = !isStaggerRow;
 }
 
-
-
-
 // dividers
 for (let x = 0; x <= 560; x += 80) {
-    Matter.World.add(engine.world, wall(x, 600, 20, 360));
+    Matter.World.add(engine.world, wall(x, 610, 20, 360));
 }
 
 setInterval(dropBead, 250);
