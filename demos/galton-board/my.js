@@ -40,19 +40,11 @@ function dropBead() {
     Matter.World.add(engine.world, droppedBead);
 }
 
-function startPegCollision(event) {
+function lightPeg(event) {
     event.pairs
         .filter((pair) => pair.bodyA.label === 'peg')
         .forEach((pair) => {
             pair.bodyA.render.fillStyle = '#4c6ef5';
-        });
-}
-
-function endPegCollision(event) {
-    event.pairs
-        .filter((pair) => pair.bodyA.label === 'peg')
-        .forEach((pair) => {
-            pair.bodyA.render.fillStyle = '#82c91e';
         });
 }
 
@@ -104,7 +96,8 @@ for (let x = 0; x <= 560; x += 80) {
     Matter.World.add(engine.world, wall(x, 610, 20, 360));
 }
 
-Matter.Events.on(engine, 'collisionStart', startPegCollision);
-Matter.Events.on(engine, 'collisionEnd', endPegCollision);
+// events
+Matter.Events.on(engine, 'collisionStart', lightPeg);
 
+// start
 setInterval(dropBead, 250);
