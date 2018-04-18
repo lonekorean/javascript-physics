@@ -9,7 +9,6 @@ function wall(x, y, width, height) {
 
 function peg(x, y) {
     return Matter.Bodies.circle(x, y, 14, {
-        label: 'peg',
         isStatic: true,
         restitution: 0.5,
         render: {
@@ -40,14 +39,6 @@ function dropBead() {
     Matter.World.add(engine.world, droppedBead);
 }
 
-function lightPeg(event) {
-    event.pairs
-        .filter((pair) => pair.bodyA.label === 'peg')
-        .forEach((pair) => {
-            pair.bodyA.render.fillStyle = '#4c6ef5';
-        });
-}
-
 // matter.js has a built in random range function, but it is deterministic
 function rand(min, max) {
     return Math.random() * (max - min) + min;
@@ -73,13 +64,19 @@ Matter.Render.run(render);
 let runner = Matter.Runner.create();
 Matter.Runner.run(runner, engine);
 
-// boundaries
+// boundary walls
 Matter.World.add(engine.world, [
     wall(280, 0, 560, 20), // top
     wall(280, 800, 560, 20), // bottom
     wall(0, 400, 20, 800), // left
     wall(560, 400, 20, 800), // right
 ]);
+
+
+// divider walls
+for (let x = 0; x <= 560; x += 80) {
+    Matter.World.add(engine.world, wall(x, 610, 20, 360));
+}
 
 // pegs
 let isStaggerRow = false;
@@ -91,13 +88,5 @@ for (let y = 200; y <= 400; y += 40) {
     isStaggerRow = !isStaggerRow;
 }
 
-// dividers
-for (let x = 0; x <= 560; x += 80) {
-    Matter.World.add(engine.world, wall(x, 610, 20, 360));
-}
-
-// events
-Matter.Events.on(engine, 'collisionStart', lightPeg);
-
-// start
+// beads
 setInterval(dropBead, 250);

@@ -48,13 +48,18 @@ Matter.Render.run(render);
 let runner = Matter.Runner.create();
 Matter.Runner.run(runner, engine);
 
-// boundaries
+// boundary walls
 Matter.World.add(engine.world, [
     wall(280, 0, 560, 20), // top
     wall(280, 800, 560, 20), // bottom
     wall(0, 400, 20, 800), // left
     wall(560, 400, 20, 800), // right
 ]);
+
+// divider walls
+for (let x = 0; x <= 560; x += 80) {
+    Matter.World.add(engine.world, wall(x, 610, 20, 360));
+}
 
 // pegs
 let isStaggerRow = false;
@@ -66,5 +71,5 @@ for (let y = 200; y <= 400; y += 40) {
     isStaggerRow = !isStaggerRow;
 }
 
-// start
-setInterval(dropBead, 1000);
+// beads
+setInterval(dropBead, 2000);
