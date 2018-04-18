@@ -72,7 +72,6 @@ Matter.World.add(engine.world, [
     wall(560, 400, 20, 800), // right
 ]);
 
-
 // divider walls
 for (let x = 0; x <= 560; x += 80) {
     Matter.World.add(engine.world, wall(x, 610, 20, 360));
