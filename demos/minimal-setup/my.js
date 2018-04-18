@@ -3,7 +3,7 @@ let engine = Matter.Engine.create();
 
 // render
 let render = Matter.Render.create({
-    element: document.getElementById('matter'),
+    element: document.body,
     engine: engine
 });
 Matter.Render.run(render);

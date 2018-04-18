@@ -13,6 +13,12 @@ body {
 	font: 1.25rem/1.25 'Roboto', sans-serif;
 }
 
+.landing {
+	max-width: 800px;
+	margin: 0 auto;
+	padding: 20px;
+}
+
 a {
 	color: #3bc9db;
 	text-decoration: none;
@@ -38,23 +44,18 @@ li {
 	padding: 0 0 20px;
 }
 
-.landing {
-	max-width: 800px;
-	margin: 0 auto;
-	padding: 20px;
-}
-
 .notes {
 	border-top: 2px dashed #868e96;
 }
 
-#matter {
+.demo {
 	display: grid;
 	align-content: center;
 	justify-content: center;
-	height: 100%;
 }
 
-canvas {
+.demo canvas {
 	border: 1px solid #868e96;
+	max-width: calc(100vw - 40px);
+	max-height: calc(100vh - 40px);
 }

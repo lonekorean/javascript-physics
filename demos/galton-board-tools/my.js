@@ -67,12 +67,7 @@ function initGaltonBoard() {
 
     // mouse constraint
     let mouseConstraint = Matter.MouseConstraint.create(engine, {
-        mouse: Matter.Mouse.create(render.canvas),
-        constraint: {
-            render: {
-                visible: false
-            }
-        }
+        mouse: Matter.Mouse.create(render.canvas)
     });
     Matter.World.add(engine.world, mouseConstraint);
 
@@ -105,8 +100,9 @@ function initGaltonBoard() {
     return {
         engine: engine,
         render: render,
-        runner: runner,
         canvas: render.canvas,
+        runner: runner,
+        
         stop: function() {
             Matter.Render.stop(render);
             Matter.Runner.stop(runner);
@@ -126,7 +122,7 @@ MatterTools.Demo.create({
 
     examples: [
         {
-            id: 'galtonBoard',
+            id: 'galton-board',
             init: initGaltonBoard,
         }
     ]
