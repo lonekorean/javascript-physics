@@ -50,9 +50,9 @@ Matter.Runner.run(runner, engine);
 
 // boundary walls
 Matter.World.add(engine.world, [
-    wall(280, 0, 560, 20), // top
+    wall(280, 0, 560, 20),   // top
     wall(280, 800, 560, 20), // bottom
-    wall(0, 400, 20, 800), // left
+    wall(0, 400, 20, 800),   // left
     wall(560, 400, 20, 800), // right
 ]);
 
@@ -72,4 +72,4 @@ for (let y = 200; y <= 400; y += 40) {
 }
 
 // beads
-setInterval(dropBead, 2000);
+let dropBeadInterval = setInterval(dropBead, 2000);

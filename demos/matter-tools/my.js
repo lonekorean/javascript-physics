@@ -73,9 +73,9 @@ function initGaltonBoard() {
 
     // boundary walls
     Matter.World.add(engine.world, [
-        wall(280, 0, 560, 20), // top
+        wall(280, 0, 560, 20),   // top
         wall(280, 800, 560, 20), // bottom
-        wall(0, 400, 20, 800), // left
+        wall(0, 400, 20, 800),   // left
         wall(560, 400, 20, 800), // right
     ]);
 
@@ -97,6 +97,7 @@ function initGaltonBoard() {
     // beads
     let dropBeadInterval = setInterval(dropBead, 1000);
 
+    // for Matter Tools
     return {
         engine: engine,
         render: render,
@@ -111,15 +112,12 @@ function initGaltonBoard() {
     };
 }
 
+// for Matter Tools
 MatterTools.Demo.create({
-    inline: false,
-    startExample: true,
     appendTo: document.body,
-
     tools: {
         gui: true
     },
-
     examples: [
         {
             id: 'galton-board',
