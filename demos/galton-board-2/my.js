@@ -9,6 +9,7 @@ function wall(x, y, width, height) {
 
 function peg(x, y) {
     return Matter.Bodies.circle(x, y, 14, {
+        label: 'peg',
         isStatic: true,
         restitution: 0.5,
         render: {
@@ -37,6 +38,14 @@ function dropBead() {
     Matter.Body.setAngularVelocity(droppedBead, rand(-0.05, 0.05));
 
     Matter.World.add(engine.world, droppedBead);
+}
+
+function lightPeg(event) {
+    event.pairs
+        .filter((pair) => pair.bodyA.label === 'peg')
+        .forEach((pair) => {
+            pair.bodyA.render.fillStyle = '#4c6ef5';
+        });
 }
 
 // matter.js has a built in random range function, but it is deterministic
@@ -86,6 +95,9 @@ for (let y = 200; y <= 400; y += 40) {
     }
     isStaggerRow = !isStaggerRow;
 }
+
+// events
+Matter.Events.on(engine, 'collisionStart', lightPeg);
 
 // beads
 let dropBeadInterval = setInterval(dropBead, 250);
