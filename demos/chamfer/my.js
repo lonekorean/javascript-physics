@@ -36,7 +36,7 @@ Matter.World.add(engine.world, [
 ]);
 
 // no chamfer
-Matter.World.add(engine.world, Matter.Bodies.rectangle(150, 200, 80, 160, {
+Matter.World.add(engine.world, Matter.Bodies.rectangle(120, 200, 80, 160, {
     render: {
         fillStyle: '#228be6'
     }
@@ -51,7 +51,7 @@ Matter.World.add(engine.world, Matter.Bodies.rectangle(300, 200, 80, 160, {
 }));
 
 // much chamfer
-Matter.World.add(engine.world, Matter.Bodies.rectangle(450, 200, 80, 160, {
+Matter.World.add(engine.world, Matter.Bodies.rectangle(480, 200, 80, 160, {
     chamfer: { radius: 40 },
     render: {
         fillStyle: '#e64980'
