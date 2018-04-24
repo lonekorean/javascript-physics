@@ -81,18 +81,19 @@ let springyConstraint = Matter.Constraint.create({
 Matter.World.add(engine.world, [springy1, springy2, springyConstraint]);
 
 // hinge constraint
+hingeFilterGroup = Matter.Body.nextGroup(true);
 let hinge1 = Matter.Bodies.circle(650, 160, 30, {
     isStatic: true,
     render: {
         fillStyle: '#868e96'
     },
-    collisionFilter: { group: -1 }
+    collisionFilter: { group: hingeFilterGroup }
 });
-let hinge2 = Matter.Bodies.rectangle(650, 210, 30, 200, {
+let hinge2 = Matter.Bodies.rectangle(650, 210, 30, 250, {
     render: {
         fillStyle: '#12b886'
     },
-    collisionFilter: { group: -1 }
+    collisionFilter: { group: hingeFilterGroup }
 });
 let hingeConstraint = Matter.Constraint.create({
     bodyA: hinge1,
