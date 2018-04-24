@@ -38,7 +38,7 @@ Matter.World.add(engine.world, [
 filterGroup = Matter.Body.nextGroup(true);
 
 // first
-Matter.World.add(engine.world, Matter.Bodies.circle(150, 250, 50, {
+Matter.World.add(engine.world, Matter.Bodies.circle(200, 250, 60, {
     render: {
         fillStyle: '#12b886'
     },
@@ -46,14 +46,14 @@ Matter.World.add(engine.world, Matter.Bodies.circle(150, 250, 50, {
 }));
 
 // second
-Matter.World.add(engine.world, Matter.Bodies.rectangle(400, 250, 100, 100, {
+Matter.World.add(engine.world, Matter.Bodies.rectangle(400, 250, 120, 120, {
     render: {
         fillStyle: '#e64980'
     }
 }));
 
 // third
-Matter.World.add(engine.world, Matter.Bodies.circle(650, 250, 50, {
+Matter.World.add(engine.world, Matter.Bodies.circle(600, 250, 60, {
     render: {
         fillStyle: '#7950f2'
     },
