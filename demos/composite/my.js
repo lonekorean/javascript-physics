@@ -15,8 +15,8 @@ let render = Matter.Render.create({
     element: document.body,
     engine: engine,
     options: {
-        width: 600,
-        height: 400,
+        width: 800,
+        height: 500,
         wireframes: false,
         background: '#f8f9fa'
     }
@@ -29,19 +29,19 @@ Matter.Runner.run(runner, engine);
 
 // boundary walls
 Matter.World.add(engine.world, [
-    wall(300, 0, 600, 20),   // top
-    wall(300, 400, 600, 20), // bottom
-    wall(0, 200, 20, 400),   // left
-    wall(600, 200, 20, 400), // right
+    wall(400, 0, 800, 20),   // top
+    wall(400, 500, 800, 20), // bottom
+    wall(0, 250, 20, 500),   // left
+    wall(800, 250, 20, 500), // right
 ]);
 
 // adjacent composite
-let adjacent1 = Matter.Bodies.rectangle(120, 150, 100, 100, {
+let adjacent1 = Matter.Bodies.rectangle(150, 200, 100, 100, {
     render: {
         fillStyle: '#228be6'
     }
 });
-let adjacent2 = Matter.Bodies.rectangle(120, 250, 100, 100, {
+let adjacent2 = Matter.Bodies.rectangle(150, 300, 100, 100, {
     render: {
         fillStyle: '#fa5252'
     }
@@ -52,12 +52,12 @@ let adjacentComposite = Matter.Body.create({
 Matter.World.add(engine.world, adjacentComposite);
 
 // overlapping composite
-let overlapping1 = Matter.Bodies.circle(300, 200, 60, {
+let overlapping1 = Matter.Bodies.circle(400, 250, 80, {
     render: {
         fillStyle: '#12b886'
     }
 });
-let overlapping2 = Matter.Bodies.rectangle(300, 200, 40, 240, {
+let overlapping2 = Matter.Bodies.rectangle(400, 250, 60, 280, {
     render: {
         fillStyle: '#7950f2'
     }
@@ -68,17 +68,17 @@ let overlappingComposite = Matter.Body.create({
 Matter.World.add(engine.world, overlappingComposite);
 
 // separated composite
-let separated1 = Matter.Bodies.circle(480, 150, 20, {
+let separated1 = Matter.Bodies.circle(650, 210, 30, {
     render: {
         fillStyle: '#15aabf'
     }
 });
-let separated2 = Matter.Bodies.circle(420, 200, 20, {
+let separated2 = Matter.Bodies.circle(570, 290, 30, {
     render: {
         fillStyle: '#e64980'
     }
 });
-let separated3 = Matter.Bodies.circle(540, 200, 20, {
+let separated3 = Matter.Bodies.circle(730, 290, 30, {
     render: {
         fillStyle: '#fab005'
     }
