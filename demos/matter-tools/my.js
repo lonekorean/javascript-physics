@@ -10,6 +10,7 @@ function initGaltonBoard() {
 
     function peg(x, y) {
         return Matter.Bodies.circle(x, y, 14, {
+            label: 'peg',
             isStatic: true,
             restitution: 0.5,
             render: {
@@ -38,6 +39,14 @@ function initGaltonBoard() {
         Matter.Body.setAngularVelocity(droppedBead, rand(-0.05, 0.05));
 
         Matter.World.add(engine.world, droppedBead);
+    }
+
+    function lightPeg(event) {
+        event.pairs
+            .filter((pair) => pair.bodyA.label === 'peg')
+            .forEach((pair) => {
+                pair.bodyA.render.fillStyle = '#4c6ef5';
+            });
     }
 
     // matter.js has a built in random range function, but it is deterministic
@@ -93,6 +102,9 @@ function initGaltonBoard() {
         }
         isStaggerRow = !isStaggerRow;
     }
+
+    // events
+    Matter.Events.on(engine, 'collisionStart', lightPeg);
 
     // beads
     let dropBeadInterval = setInterval(dropBead, 1000);
