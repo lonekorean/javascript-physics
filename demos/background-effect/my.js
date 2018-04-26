@@ -1,3 +1,6 @@
+// plugins
+Matter.use(MatterWrap);
+
 const viewportWidth = document.documentElement.clientWidth;
 const viewportHeight = document.documentElement.clientHeight;
 
@@ -23,24 +26,48 @@ let runner = Matter.Runner.create();
 Matter.Runner.run(runner, engine);
 
 let bodies = [];
-for (let i = 0; i <= 100; i++) {
-    bodies.push(Matter.Bodies.circle(viewportWidth / 2, viewportHeight / 2, 30, {
+for (let i = 0; i <= 20; i++) {
+    let x = rand(0, viewportWidth);
+    let y = rand(0, viewportHeight);
+    bodies.push(Matter.Bodies.circle(x, y, 80, {
+        plugin: {
+            wrap: {
+                min: { x: 0, y: 0 },
+                max: { x: viewportWidth, y: viewportHeight }
+            }
+        },
         render: {
-            fillStyle: '#228be6'
+            fillStyle: '#dee2e6'
         }
     }));
 }
 Matter.World.add(engine.world, bodies);
-
-document.addEventListener('scroll', onScroll);
 
 // matter.js has a built in random range function, but it is deterministic
 function rand(min, max) {
     return Math.random() * (max - min) + min;
 }
 
+window.addEventListener('scroll', onScrollThrottled);
+
+let lastScrollPos = 0;
+let currentScrollDelta = 0;
+let scrollTimeout = null;
+
+function onScrollThrottled() {
+    if (!scrollTimeout) {
+        scrollTimeout = setTimeout(onScroll, 50);
+    }
+}
+
 function onScroll(event) {
+    clearTimeout(scrollTimeout);
+    scrollTimeout = null;
+
+    let direction = lastScrollPos > document.documentElement.scrollTop ? 1 : -1;
     bodies.forEach((body) => {
-        Matter.Body.setVelocity(body, { x: 0, y: rand(-5, -1)});
+        Matter.Body.setVelocity(body, { x: rand(-0.5, 0.5), y: direction * rand(2, 10) });
     });
+
+    lastScrollPos = document.documentElement.scrollTop;
 }
