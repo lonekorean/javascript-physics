@@ -1,0 +1,19 @@
+.current-score, .high-score {
+	position: absolute;
+	top: 20px;
+    line-height: 1;
+    text-transform: uppercase;
+}
+
+.current-score {
+	left: 20px;
+}
+
+.high-score {
+	right: 20px;
+	text-align: right;
+}
+
+.score-value {
+	font-size: 4rem;
+}

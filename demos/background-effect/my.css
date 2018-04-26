@@ -1,0 +1,27 @@
+body {
+    padding: 40px;
+    color: #212529;
+    background-color: #e6fcf5;
+}
+
+h1 {
+    font-size: 6rem;
+}
+
+.content {
+    line-height: 1.5;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 500px auto;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+canvas {
+    position: fixed;
+    z-index: -1;
+    top: 0;
+    left: 0;
+}
