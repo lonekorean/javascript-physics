@@ -29,7 +29,7 @@ function floatingBody() {
     return Matter.Bodies.circle(x, y, rand(50, 100), {
         frictionAir: 0.03,
         render: {
-            fillStyle: '#dee2e6'
+            fillStyle: (floatingBodies.length % 2 === 0) ? '#c5f6fa' : '#d0ebff'
         },
         plugin: {
             wrap: {
@@ -126,7 +126,7 @@ let buyBody = Matter.Bodies.circle(buyX, buyY, buyRadius, {
 
 // constraing buy body to current buy element's position
 var buyConstraint = Matter.Constraint.create({
-    pointA: { x: buyX,  y: buyY },
+    pointA: { x: buyX, y: buyY },
     bodyB: buyBody,
     pointB: { x: 0, y: 0 },
     stiffness: 0.001,
@@ -138,7 +138,6 @@ Matter.World.add(engine.world, [buyBody, buyConstraint]);
 
 // add a number of floating bodies appropriate for amount of screen space
 let floatingBodiesCount = Math.round(viewportWidth * viewportHeight / 50000);
-console.log(floatingBodiesCount);
 for (let i = 0; i <= floatingBodiesCount; i++) {
     floatingBodies.push(floatingBody());
 }

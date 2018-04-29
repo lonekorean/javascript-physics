@@ -23,6 +23,7 @@ h2 {
     margin: 0.25em 0;
     color: #fd7e14;
     line-height: 1;
+    font-size: 2rem;
 }
 
 h2:not(:first-of-type) {
@@ -33,13 +34,13 @@ h2:not(:first-of-type) {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-column-gap: 40px;
-    min-width: 900px;
     max-width: 1200px;
     margin: 0 auto;
 }
 
 .content {
     line-height: 1.5;
+    text-shadow: 1px 1px #f8f9fa;
 }
 
 .buy {
@@ -47,8 +48,9 @@ h2:not(:first-of-type) {
     justify-content: center;
     align-items: center;
     position: fixed;
-    left: calc(50% - 350px); /* center under header */
-    top: 200px;
+    top: 50%;
+    left: calc(50% - 20px);
+    margin: -100px 0 0 calc(-100px - 460px / 2);
     width: 200px;
     height: 200px;
     border-radius: 50%;
@@ -61,4 +63,40 @@ h2:not(:first-of-type) {
     text-decoration: none;
     text-shadow: 2px 2px #74b816;
     transition: transform 0.2s linear;
+}
+
+@media screen and (max-width: 1000px) {
+    h1 {
+        font-size: 3.75rem;
+    }
+    h2 {
+        font-size: 1.75rem;
+    }
+    .content {
+        font-size: 1rem;
+    }
+    .buy {
+        margin: -80px 0 0 calc(-80px - 288px / 2);
+        width: 160px;
+        height: 160px;
+        font-size: 1.5rem;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    h1 {
+        font-size: 2rem;
+    }
+    h2 {
+        font-size: 1.25rem;
+    }
+    .content {
+        font-size: 1rem;
+    }
+    .buy {
+        margin: -60px 0 0 calc(-60px - 154px / 2);
+        width: 120px;
+        height: 120px;
+        font-size: 1rem;
+    }
 }
