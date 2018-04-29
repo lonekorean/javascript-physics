@@ -1,22 +1,7 @@
 body {
-    padding: 40px;
+    padding: 60px 20px;
     color: #212529;
-    background-color: #e6fcf5;
-}
-
-h1 {
-    font-size: 6rem;
-}
-
-.content {
-    line-height: 1.5;
-}
-
-.container {
-    display: grid;
-    grid-template-columns: 500px auto;
-    max-width: 1200px;
-    margin: 0 auto;
+    background-color: #f8f9fa;
 }
 
 canvas {
@@ -24,4 +9,56 @@ canvas {
     z-index: -1;
     top: 0;
     left: 0;
+}
+
+h1 {
+    color: #e64980;
+    text-align: right;
+    line-height: 1;
+    font-size: 6rem;
+    text-shadow: 2px 2px #f8f9fa, 4px 4px #faa2c1;
+}
+
+h2 {
+    margin: 0.25em 0;
+    color: #fd7e14;
+    line-height: 1;
+}
+
+h2:not(:first-of-type) {
+    margin-top: 2em;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 40px;
+    min-width: 900px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.content {
+    line-height: 1.5;
+}
+
+.buy {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    left: calc(50% - 350px); /* center under header */
+    top: 200px;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    color: #f8f9fa;
+    background-color: #94d82d;
+    border: 8px solid  #74b816;
+    font-size: 2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-decoration: none;
+    text-shadow: 2px 2px #74b816;
+    transition: transform 0.2s linear;
 }
