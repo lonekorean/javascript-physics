@@ -10,7 +10,7 @@ body {
 	max-width: 800px;
 	min-height: 100%;
 	margin: 0 auto;
-	padding: 20px;
+	padding: 40px;
     color: #f8f9fa;
     background-color: #212529;
 	font: 1.25rem/1.25 'Roboto', sans-serif;
@@ -26,7 +26,7 @@ a:hover {
 }
 
 h1 {
-    margin: 0;
+    margin: 0 0 40px;
     font-size: 3.5rem;
     text-transform: uppercase;
 }
