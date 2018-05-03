@@ -12,32 +12,11 @@ body {
 	justify-content: center;
 	min-height: 100%;
 	margin: 0;
-    color: #f8f9fa;
     background-color: #212529;
-	font: 1.5rem/1 'Roboto', sans-serif;
-    text-transform: uppercase;
 }
 
 canvas {
 	border: 1px solid #868e96;
 	max-width: calc(100vw - 40px);
 	max-height: calc(100vh - 40px);
-}
-
-.current-score, .high-score {
-	position: absolute;
-	top: 20px;
-}
-
-.current-score {
-	left: 20px;
-}
-
-.high-score {
-	right: 20px;
-	text-align: right;
-}
-
-.score-value {
-	font-size: 4rem;
 }

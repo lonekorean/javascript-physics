@@ -7,17 +7,13 @@ html {
 }
 
 body {
+	max-width: 800px;
 	min-height: 100%;
-	margin: 0;
+	margin: 0 auto;
+	padding: 20px;
     color: #f8f9fa;
     background-color: #212529;
 	font: 1.25rem/1.25 'Roboto', sans-serif;
-}
-
-.landing {
-	max-width: 800px;
-	margin: 0 auto;
-	padding: 20px;
 }
 
 a {
@@ -45,18 +41,10 @@ li {
 	padding: 0 0 20px;
 }
 
+.break {
+	padding-top: 30px;
+}
+
 .notes {
 	border-top: 2px dashed #868e96;
-}
-
-.demo {
-	display: grid;
-	align-content: center;
-	justify-content: center;
-}
-
-.demo canvas {
-	border: 1px solid #868e96;
-	max-width: calc(100vw - 40px);
-	max-height: calc(100vh - 40px);
 }

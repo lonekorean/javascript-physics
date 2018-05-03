@@ -1,7 +1,21 @@
+*, *::before, *::after {
+	box-sizing: border-box;
+}
+
+html {
+	height: 100%;
+}
+
 body {
+	display: grid;
+	align-content: center;
+	justify-content: center;
+	min-height: 100%;
+	margin: 0;
     padding: 60px 20px;
     color: #212529;
     background-color: #f8f9fa;
+	font: 1.25rem/1.5 'Roboto', sans-serif;
 }
 
 canvas {
@@ -12,10 +26,12 @@ canvas {
 }
 
 h1 {
+    margin: 0;
     color: #e64980;
     text-align: right;
     line-height: 1;
     font-size: 6rem;
+    text-transform: uppercase;
     text-shadow: 2px 2px #f8f9fa, 4px 4px #faa2c1;
 }
 
@@ -39,7 +55,6 @@ h2:not(:first-of-type) {
 }
 
 .content {
-    line-height: 1.5;
     text-shadow: 1px 1px #f8f9fa;
 }
 
@@ -63,6 +78,10 @@ h2:not(:first-of-type) {
     text-decoration: none;
     text-shadow: 2px 2px #74b816;
     transition: transform 0.2s linear;
+}
+
+.buy:hover {
+    text-decoration: underline;
 }
 
 @media screen and (max-width: 1000px) {

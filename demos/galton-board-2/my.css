@@ -1,0 +1,21 @@
+*, *::before, *::after {
+	box-sizing: border-box;
+}
+
+html {
+	height: 100%;
+}
+
+body {
+	display: grid;
+	align-content: center;
+	justify-content: center;
+	min-height: 100%;
+	margin: 0;
+    background-color: #212529;
+}
+
+canvas {
+	max-width: calc(100vw - 40px);
+	max-height: calc(100vh - 40px);
+}
