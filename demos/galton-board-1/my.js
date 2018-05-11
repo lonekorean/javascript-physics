@@ -58,7 +58,8 @@ Matter.World.add(engine.world, [
 
 // divider walls
 for (let x = 0; x <= 560; x += 80) {
-    Matter.World.add(engine.world, wall(x, 610, 20, 360));
+    let divider = wall(x, 610, 20, 360);
+    Matter.World.add(engine.world, divider);
 }
 
 // pegs
