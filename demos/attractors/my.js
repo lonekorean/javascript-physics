@@ -4,7 +4,7 @@ Matter.use(MatterAttractors);
 function throwBall() {
     let ball = Matter.Bodies.circle(-20, 250, 20, {
         render: {
-            fillStyle: '#228be6'
+            fillStyle: '#12b886'
         }
     });
     Matter.Body.setVelocity(ball, {x: 10, y: -10});
@@ -46,7 +46,7 @@ Matter.World.add(engine.world, Matter.Bodies.circle(400, 250, 60, {
         ]
     },
     render: {
-        fillStyle: '#fd7e14'
+        fillStyle: '#be4bdb'
     }
 }));
 
