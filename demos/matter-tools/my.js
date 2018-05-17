@@ -126,6 +126,8 @@ function initGaltonBoard() {
 }
 
 // for Matter Tools
+// this code is simplified for a single example and leaves out otherwise required props
+// to see how setting up multiple examples works, check out /demos/lightning-round/my.js
 MatterTools.Demo.create({
     appendTo: document.body,
     tools: {
